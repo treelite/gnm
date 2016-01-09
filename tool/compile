@@ -1,0 +1,15 @@
+#! /bin/bash
+
+DIR="output"
+BIN_FILE="${DIR}/bin/gnm"
+
+rm -rf ${DIR}
+
+babel ./ --ignore node_modules tool -d output
+
+echo '#! /usr/bin/env node' > $BIN_FILE
+cat ${BIN_FILE}.js >> $BIN_FILE
+
+chmod a+x $BIN_FILE
+
+cp package.json $DIR/
