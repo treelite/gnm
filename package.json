@@ -2,8 +2,8 @@
   "name": "gnm",
   "version": "0.1.0",
   "description": "Globel install multi version node module",
-  "main": "index.js",
   "bin": "./bin/gnm",
+  "repository": "https://github.com/treelite/gnm.git",
   "scripts": {
     "compile": "./tool/compile"
   },
