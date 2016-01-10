@@ -1,3 +1,3 @@
 # gnm
 
-Globel install multi version node module
+Global install multi version node module
