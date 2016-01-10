@@ -6,15 +6,35 @@
 'use strict';
 
 import use from '../lib/use';
+import program from 'commander';
+import * as meta from '../lib/meta';
+import install from '../lib/install';
 
-let [name, version] = (process.argv[2] || '').split('@');
+program
+    .option('-f force', 'force use module')
+    .parse(process.argv);
+
+let [name, version] = (program.args[0] || '').split('@');
 
 if (!name) {
     console.error('Please input package');
     process.exit(1);
 }
 
-use(name, version)
+let before = Promise.resolve();
+if (!meta.has(name, version)) {
+    if (!program.force) {
+        let fullName = name + (version ? '@' + version : '');
+        console.error(`please install ${fullName} first`);
+        process.exit(1);
+    }
+    else {
+        before = install(name, version);
+    }
+}
+
+before
+    .then(() => use(name, version))
     .then(
         info => console.log(`use ${info.name}@${info.version}`),
         error => console.error(error) || process.exit(1)
