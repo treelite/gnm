@@ -1,3 +1,3 @@
 # gnm
 
-Install multiple version node package globally
+Install multiple versions node package globally
