@@ -1,6 +1,6 @@
 {
   "name": "gnm",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Install multiple versions node package globally",
   "bin": "./bin/gnm",
   "repository": "https://github.com/treelite/gnm.git",
