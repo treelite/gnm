@@ -8,9 +8,13 @@
 import * as meta from '../lib/meta';
 
 let pkgs = meta.get();
+let name = process.argv[2];
+
+if (name) {
+    pkgs = pkgs.filter(item => item.name === name);
+}
 
 if (!pkgs.length) {
-    console.log('(empty)');
     process.exit(0);
 }
 
