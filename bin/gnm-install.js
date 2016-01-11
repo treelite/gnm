@@ -10,7 +10,7 @@ import install from '../lib/install';
 let [name, version] = (process.argv[2] || '').split('@');
 
 if (!name) {
-    console.error('Please input package');
+    console.error('please input package name');
     process.exit(1);
 }
 

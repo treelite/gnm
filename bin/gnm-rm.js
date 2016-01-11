@@ -17,7 +17,7 @@ program
 let [name, version] = (program.args[0] || '').split('@');
 
 if (!name) {
-    console.error('please input package');
+    console.error('please input package name');
     process.exit(1);
 }
 
