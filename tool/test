@@ -6,5 +6,5 @@ if [ "$CI" != true ]; then
     docker run --rm gnm-test
     rm Dockerfile
 else
-    ./node_module/.bin/jasmine JASMINE_CONFIG_PATH=test/jasmine.json
+    ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=test/jasmine.json
 fi;
