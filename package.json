@@ -5,18 +5,31 @@
   "bin": "./bin/gnm",
   "repository": "https://github.com/treelite/gnm.git",
   "scripts": {
-    "compile": "./tool/compile"
+    "compile": "./tool/compile",
+    "pretest": "npm run compile",
+    "test": "./tool/test"
   },
   "author": "treelite <c.xinle@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.4.0",
-    "babel-preset-es2015-node5": "^1.1.1"
+    "babel-preset-es2015-node5": "^1.1.1",
+    "cz-conventional-changelog": "^1.1.5",
+    "ghooks": "^1.0.3",
+    "jasmine": "^2.4.1"
   },
   "dependencies": {
     "commander": "^2.9.0",
     "mkdirp": "^0.5.1",
     "semver": "^5.1.0",
     "xtend": "^4.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "./tool/validate-commit-msg.js"
+    }
   }
 }

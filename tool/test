@@ -1,0 +1,11 @@
+#! /bin/bash
+
+if [ "$CI" != true ]; then
+    cp test/Dockerfile ./
+    docker build -t gnm-test .
+    docker run --rm gnm-test
+    rm Dockerfile
+else
+    ./node_module/.bin/jasmine JASMINE_CONFIG_PATH=test/jasmine.json
+fi;
+
