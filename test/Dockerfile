@@ -1,8 +1,6 @@
 FROM node:5.3.0
 MAINTAINER treelite <c.xinle@gmail.com>
 
-ENV CI true
-
 WORKDIR /lib/node_modules/gnm
 
 ADD node_modules node_modules
