@@ -13,6 +13,11 @@ const BASE_DIR = path.resolve(os.homedir(), '.gnm');
 
 describe('Meta', () => {
 
+    afterAll(() => {
+        let pkgs = meta.get();
+        pkgs.forEach(item => item.versions.forEach(version => meta.rm(item.name, version)));
+    });
+
     it('BASE_DIR', () => {
         expect(meta.BASE_DIR).toEqual(BASE_DIR);
     });
